@@ -122,13 +122,13 @@ double term() {
                 t = ts.get();
                 break;
             }
-            
+
             default:
                 ts.putback(t);
                 return left;
-        
+
         }
-    
+
     }
 }
 double primary() {
@@ -147,7 +147,7 @@ double primary() {
             return primary();
         default:
             error("Error: primary expected");
-            
+
     }
     return t.value;
 }
@@ -158,11 +158,7 @@ void print_token(Token t){
 }
 void clean_up_mess(){
     ts.ignore(print);
-//    while(true){
-//        Token t = ts.get();
-//        if(t.kind == print) return;
-//    }
-    
+
 }
 void calculate(){
     while (cin){
@@ -177,11 +173,11 @@ void calculate(){
         catch(exception& e ){
             cerr<< e.what()<< endl;
             clean_up_mess();
-            
+
         }
     }
 }
-        
+
 int main() {
     try{
         calculate();
@@ -191,23 +187,6 @@ int main() {
         cerr << "Unknown exception \n";
         return 2;
     }
-//    double val = 0.0;
-//    cout << prompt;
-//    while(cin) {
-//        Token t = ts.get();
-//        //cout << "In main(), got token: " << t.kind << " with val of: " << t.value << '\n';
-//        if(t.kind == quit){
-//            break;
-//        }
-//        else if(t.kind == print){
-//            cout << result << val << endl;
-//            cout << prompt;
-//        }
-//        else{
-//            ts.putback(t);
-//        }
-//        val = expression();
-//
-//    }
-   
+
+
 }
